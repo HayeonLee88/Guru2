@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Firebase auth</string>
+    <string name="sign_in">로그인</string>
+    <string name="email">이메일</string>
+    <string name="password">비밀번호</string>
+    <string name="confirm_password">비밀번호 확인</string>
+    <string name="or">또는</string>
+    <string name="create_account">계정 생성</string>
+    <string name="reset_password">비밀번호 재설정</string>
+    <string name="you_are_signed_in">로그인 되었습니다</string>
+    <string name="sign_out">로그아웃</string>
+    <string name="sign_up">회원가입</string>
+</resources>
