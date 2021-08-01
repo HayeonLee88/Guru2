@@ -70,9 +70,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginVertical="20dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="#E8E8E8"
         android:text="@string/sign_in"
-        app:layout_constraintBottom_toTopOf="@+id/btnCreateAccount2"
+        android:textColor="#FF535353"
+        app:layout_constraintBottom_toTopOf="@+id/btnResetPassword"
         app:layout_constraintEnd_toEndOf="@+id/etSignInPassword"
         app:layout_constraintStart_toStartOf="@+id/etSignInPassword"
         app:layout_constraintTop_toBottomOf="@+id/etSignInPassword" />
