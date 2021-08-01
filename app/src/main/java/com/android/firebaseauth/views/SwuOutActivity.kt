@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.android.firebaseauth.R
+import com.android.firebaseauth.views.swu_out.*
 
 
 class SwuOutActivity : AppCompatActivity() {
@@ -29,23 +30,23 @@ class SwuOutActivity : AppCompatActivity() {
         btnSstudy = findViewById(R.id.btnSstudy)
 
         btnEat.setOnClickListener {
-            val intent = Intent(this, SwuInActivity::class.java) // 음식점 리스트 화면으로 전환 (하진님이 여기 연결해주세요!!)
+            val intent = Intent(this, FoodMapFragmentActivity::class.java) // 음식점 리스트 화면으로 전환
             startActivity(intent)
         }
         btnDrink.setOnClickListener {
-            val intent = Intent(this, SwuOutActivity::class.java) // 카페 리스트 화면으로 전환
+            val intent = Intent(this, CafeMapFragmentActivity::class.java) // 카페 리스트 화면으로 전환
             startActivity(intent)
         }
         btnPlay.setOnClickListener {
-            val intent = Intent(this,SwuInActivity::class.java) // 놀 곳 리스트 화면으로 전환
+            val intent = Intent(this, PlayMapFragmentActivity::class.java) // 놀 곳 리스트 화면으로 전환
             startActivity(intent)
         }
         btnWalk.setOnClickListener {
-            val intent = Intent(this,SwuOutActivity::class.java) // 산책 스팟 리스트 화면으로 전환
+            val intent = Intent(this, WalkMapFragmentActivity::class.java) // 산책 스팟 리스트 화면으로 전환
             startActivity(intent)
         }
         btnSstudy.setOnClickListener {
-            val intent = Intent(this, SwuInActivity::class.java) // 스터디 스팟 리스트 화면으로 전환
+            val intent = Intent(this, StudyMapFragmentActivity::class.java) // 스터디 스팟 리스트 화면으로 전환
             startActivity(intent)
         }
     }
