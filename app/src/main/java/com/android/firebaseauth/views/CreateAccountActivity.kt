@@ -5,17 +5,12 @@ import android.os.Bundle
 import com.android.firebaseauth.R
 import kotlinx.android.synthetic.main.activity_create_account.*
 import android.content.Intent
-import android.database.sqlite.SQLiteDatabase
 import android.os.AsyncTask
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.actionCodeSettings
-import com.google.gson.internal.bind.TypeAdapters.URL
-import kotlinx.android.synthetic.main.activity_home.*
-import retrofit2.http.Field
-import retrofit2.http.POST
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
