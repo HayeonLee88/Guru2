@@ -8,8 +8,7 @@
     <string name="create_account">Create account</string>
     <string name="reset_password">Reset password</string>
     <string name="you_are_signed_in">You are signed in</string>
-    <string name="start" translatable="false">Start</string>
+    <string name="start">Start</string>
     <string name="sign_up">Sign up</string>
     <string name="sign_out">Sign out</string>
-
 </resources>
