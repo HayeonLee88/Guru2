@@ -1,108 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout3"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+
+    <TextView
+        android:id="@+id/outTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center">
-        <TextView
-            android:id="@+id/outTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="서울여대 주변"
-            android:textSize="25sp" />
-    </LinearLayout>
+        android:text="서울여대 주변"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/catimageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/catimageView"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:srcCompat="@drawable/squirrel"/>
+    <ImageView
+        android:id="@+id/catimageView"
+        android:layout_width="410dp"
+        android:layout_height="191dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/outTextView"
+        app:srcCompat="@drawable/squirrel" />
 
-    </LinearLayout>
+    <Button
+        android:id="@+id/btnEat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#E8E8E8"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="음식점"
+        android:textColor="#FF535353"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnDrink"
+        app:layout_constraintEnd_toStartOf="@+id/btnWalk"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/catimageView" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/btnWalk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#E8E8E8"
+        android:padding="15dp"
+        android:text="산책 스팟"
+        android:textColor="#FF535353"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnDrink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnEat"
+        app:layout_constraintTop_toBottomOf="@+id/catimageView"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <Button
-            android:id="@+id/btnEat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="#E8E8E8"
-            android:gravity="center"
-            android:padding="15dp"
-            android:text="음식점"
-            android:textColor="#FF535353"
-            android:textSize="30sp" />
+    <Button
+        android:id="@+id/btnDrink"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#E8E8E8"
+        android:padding="15dp"
+        android:text="카페"
+        android:textColor="#FF535353"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnPlay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEat" />
 
-        <Button
-            android:id="@+id/btnWalk"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="#E8E8E8"
-            android:padding="15dp"
-            android:text="산책 스팟"
-            android:textColor="#FF535353"
-            android:textSize="30sp" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#E8E8E8"
+        android:padding="15dp"
+        android:text="놀거리"
+        android:textColor="#FF535353"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnDrink"
+        app:layout_constraintTop_toBottomOf="@+id/btnWalk" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/btnSstudy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="196dp"
+        android:backgroundTint="#E8E8E8"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="스터디 스팟"
+        android:textColor="#FF535353"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDrink" />
 
-        <Button
-            android:id="@+id/btnDrink"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:backgroundTint="#E8E8E8"
-            android:padding="15dp"
-            android:text="카페"
-            android:textColor="#FF535353"
-            android:textSize="30sp" />
 
-        <Button
-            android:id="@+id/btnPlay"
-            android:layout_width="161dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:backgroundTint="#E8E8E8"
-            android:padding="15dp"
-            android:text="놀거리"
-            android:textColor="#FF535353"
-            android:textSize="30sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/btnSstudy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="#E8E8E8"
-            android:gravity="center"
-            android:padding="15dp"
-            android:text="스터디 스팟"
-            android:textColor="#FF535353"
-            android:textSize="30sp" />
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

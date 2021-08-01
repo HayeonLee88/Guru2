@@ -4,17 +4,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.android.firebaseauth.R
 import android.content.Intent
-import android.service.controls.ControlsProviderService.TAG
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.actionCodeSettings
-import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class SignInActivity : AppCompatActivity() {
+
+    lateinit var etSignInEmail: EditText
+    lateinit var etSignInPassword: EditText
+
+    lateinit var btnCreateAccount: Button
+    lateinit var btnResetPassword: Button
+    lateinit var btnSignIn: Button
+
     lateinit var signInEmail: String
     lateinit var signInPassword: String
     lateinit var signInInputsArray: Array<EditText>
@@ -23,8 +28,15 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
+        etSignInEmail = findViewById(R.id.etSignInEmail)
+        etSignInPassword = findViewById(R.id.etSignInPassword)
+        btnCreateAccount = findViewById(R.id.btnCreateAccount2)
+        btnResetPassword = findViewById(R.id.btnResetPassword)
+        btnSignIn = findViewById(R.id.btnSignIn)
+
         signInInputsArray = arrayOf(etSignInEmail, etSignInPassword)
-        btnCreateAccount2.setOnClickListener {
+
+        btnCreateAccount.setOnClickListener {
             startActivity(Intent(this, CreateAccountActivity::class.java))
             finish()
         }

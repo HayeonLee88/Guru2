@@ -3,9 +3,9 @@ package com.android.firebaseauth.views
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.android.firebaseauth.R
-import kotlinx.android.synthetic.main.activity_create_account.*
 import android.content.Intent
 import android.os.AsyncTask
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
@@ -25,11 +25,27 @@ class CreateAccountActivity : AppCompatActivity() {
 
     lateinit var userEmail: String
     lateinit var userPassword: String
+
+    lateinit var etEmail: EditText
+    lateinit var etPassword: EditText
+    lateinit var etConfirmPassword: EditText
+
     lateinit var createAccountInputsArray: Array<EditText>
+
+    lateinit var btnCreateAccount: Button
+    lateinit var btnSignIn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_account)
+
+        etEmail = findViewById(R.id.etEmail)
+        etPassword = findViewById(R.id.etPassword)
+        etConfirmPassword = findViewById(R.id.etConfirmPassword)
+
+        btnCreateAccount = findViewById(R.id.btnCreateAccount)
+        btnSignIn = findViewById(R.id.btnSignIn2)
+
         createAccountInputsArray = arrayOf(etEmail, etPassword, etConfirmPassword)
 
         onStart()
@@ -38,7 +54,7 @@ class CreateAccountActivity : AppCompatActivity() {
             signIn()
         }
 
-        btnSignIn2.setOnClickListener {
+        btnSignIn.setOnClickListener {
             startActivity(Intent(this, SignInActivity::class.java))
             Toast.makeText(this, "로그인 해주세요", Toast.LENGTH_SHORT).show()
             finish()

@@ -1,17 +1,23 @@
 package com.android.firebaseauth.views
 
 import android.content.Intent
+import android.opengl.ETC1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.service.controls.ControlsProviderService
 import android.util.Log
+import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.android.firebaseauth.R
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_reset_pwd.*
 
 class ResetPwdActivity : AppCompatActivity() {
+
+    lateinit var etResetPWDEmail: EditText
+    lateinit var btnResetPassword: Button
+    lateinit var btnSignIn: Button
+
     lateinit var signInEmail: String
     lateinit var ResetpwdInputsArray: Array<EditText>
 
@@ -19,13 +25,15 @@ class ResetPwdActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reset_pwd)
 
-        ResetpwdInputsArray = arrayOf(etResetPWDEmail)
+        etResetPWDEmail = findViewById(R.id.etResetPWDEmail)
+        btnResetPassword = findViewById(R.id.btnResetPassword2)
+        btnSignIn =  findViewById(R.id.btnSignIn3)
 
-        btnResetPassword2.setOnClickListener {
+        btnResetPassword.setOnClickListener {
             findPassword()
         }
 
-        btnSignIn3.setOnClickListener {
+        btnSignIn.setOnClickListener {
             startActivity(Intent(this, SignInActivity::class.java))
             Toast.makeText(this, "please sign into your account", Toast.LENGTH_SHORT).show()
             finish()
