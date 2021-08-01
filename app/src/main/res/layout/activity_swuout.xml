@@ -26,7 +26,7 @@
             android:id="@+id/catimageView"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            app:srcCompat="@drawable/cat"/>
+            app:srcCompat="@drawable/squirrel"/>
 
     </LinearLayout>
 
