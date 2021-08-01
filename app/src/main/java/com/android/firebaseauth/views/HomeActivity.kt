@@ -31,5 +31,13 @@ class HomeActivity : AppCompatActivity() {
             Toast.makeText(this, "로그아웃", Toast.LENGTH_SHORT).show()
             finish()
         }
+
+        //시작 버튼
+        btnStart.setOnClickListener {
+            //시작 화면으로 유정님이 바꿔주세요!
+            startActivity(Intent(this, SignInActivity::class.java))
+            Toast.makeText(this, "로그아웃", Toast.LENGTH_SHORT).show()
+            finish()
+        }
     }
 }
