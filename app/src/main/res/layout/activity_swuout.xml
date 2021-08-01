@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/outTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서울여대 주변"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/catimageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:srcCompat="@drawable/cat"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnEat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="#E8E8E8"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="음식점"
+            android:textColor="#FF535353"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/btnWalk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="#E8E8E8"
+            android:padding="15dp"
+            android:text="산책 스팟"
+            android:textColor="#FF535353"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnDrink"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:backgroundTint="#E8E8E8"
+            android:padding="15dp"
+            android:text="카페"
+            android:textColor="#FF535353"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:backgroundTint="#E8E8E8"
+            android:padding="15dp"
+            android:text="놀거리"
+            android:textColor="#FF535353"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnSstudy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#E8E8E8"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="스터디 스팟"
+            android:textColor="#FF535353"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+</LinearLayout>
