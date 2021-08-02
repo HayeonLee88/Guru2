@@ -6,7 +6,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import androidx.annotation.NonNull
-import com.example.guru_n.swu_in.food.FoodResult1Activity
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.*
 import com.naver.maps.map.overlay.InfoWindow
@@ -15,6 +14,7 @@ import com.naver.maps.map.overlay.Overlay
 import com.naver.maps.map.util.FusedLocationSource
 import com.naver.maps.map.util.MarkerIcons
 import com.android.firebaseauth.R
+import com.android.firebaseauth.views.swu_in.result.food.FoodResultActivity
 import com.naver.maps.map.LocationTrackingMode
 import com.naver.maps.map.MapView
 import com.naver.maps.map.NaverMap
@@ -53,10 +53,7 @@ class In_FoodMapFragmentActivity : Activity(), OnMapReadyCallback {
 
         // 리스트 버튼 누르면 좌표, 장소이름 전달
         FoodbtnList1.setOnClickListener {
-            var intent = Intent(this, FoodResult1Activity::class.java)  // 주영님 연결해주세요!
-            intent.putExtra("name","아딸 떡볶이")
-            intent.putExtra("lat",37.62590786013134)
-            intent.putExtra("lng",127.09302582011024)
+            var intent = Intent(this, FoodResultActivity::class.java)
             startActivity(intent)
         }
 

@@ -6,13 +6,13 @@ import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import androidx.annotation.NonNull
-import com.example.guru_n.swu_out.result.cafe.CafeResult1Activity
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.*
 import com.naver.maps.map.overlay.Marker
 import com.naver.maps.map.util.FusedLocationSource
 import com.naver.maps.map.util.MarkerIcons
 import com.android.firebaseauth.R
+import com.android.firebaseauth.views.swu_out.result.cafe.CafeResultActivity
 import com.naver.maps.map.LocationTrackingMode
 import com.naver.maps.map.MapView
 import com.naver.maps.map.NaverMap
@@ -50,10 +50,7 @@ class CafeMapFragmentActivity : Activity(), OnMapReadyCallback {
 
         // 리스트 버튼 누르면 좌표, 장소이름 전달
         CafebtnList1.setOnClickListener {
-            var intent = Intent(this, CafeResult1Activity::class.java) // 여기 연결해주세요!
-            intent.putExtra("name","토끼별")
-            intent.putExtra("lat",37.62505733711925)
-            intent.putExtra("lng",127.0891451997975)
+            var intent = Intent(this, CafeResultActivity::class.java)
             startActivity(intent)
         }
     }

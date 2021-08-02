@@ -9,21 +9,22 @@
 
     <application
         android:allowBackup="true"
+        android:appComponentFactory="whateverString"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirebaseAuth"
         android:usesCleartextTraffic="true"
-        tools:replace="android:appComponentFactory"
-        android:appComponentFactory="whateverString">
-
-        <activity android:name=".views.ResetPwdActivity"></activity>
+        tools:replace="android:appComponentFactory">
+        <activity android:name=".views.swu_out.result.cafe.CafeResultActivity"></activity>
+        <activity android:name=".views.swu_in.result.food.FoodResultActivity" />
+        <activity android:name=".views.ResetPwdActivity" />
         <activity android:name=".views.SignInActivity" />
         <activity android:name=".views.CreateAccountActivity" />
-        <activity android:name=".views.SwuInActivity"/>
-        <activity android:name=".views.SwuOutActivity"/>
-        <activity android:name=".views.ThemaActivity"/>
+        <activity android:name=".views.SwuInActivity" />
+        <activity android:name=".views.SwuOutActivity" />
+        <activity android:name=".views.ThemaActivity" />
         <activity android:name=".views.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,23 +32,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".views.swu_in.In_CafeMapFragmentActivity"/>
-        <activity android:name=".views.swu_in.In_FoodMapFragmentActivity"/>
-        <activity android:name=".views.swu_in.In_PhotoMapFragmentActivity"/>
-        <activity android:name=".views.swu_in.In_RestMapFragmentActivity"/>
-        <activity android:name=".views.swu_in.In_StudyMapFragmentActivity"/>
-
-        <activity android:name=".views.swu_out.FoodMapFragmentActivity"/>
-        <activity android:name=".views.swu_out.CafeMapFragmentActivity"/>
-        <activity android:name=".views.swu_out.WalkMapFragmentActivity"/>
-        <activity android:name=".views.swu_out.StudyMapFragmentActivity"/>
-        <activity android:name=".views.swu_out.PlayMapFragmentActivity"/>
+        <activity android:name=".views.swu_in.In_CafeMapFragmentActivity" />
+        <activity android:name=".views.swu_in.In_FoodMapFragmentActivity" />
+        <activity android:name=".views.swu_in.In_PhotoMapFragmentActivity" />
+        <activity android:name=".views.swu_in.In_RestMapFragmentActivity" />
+        <activity android:name=".views.swu_in.In_StudyMapFragmentActivity" />
+        <activity android:name=".views.swu_out.FoodMapFragmentActivity" />
+        <activity android:name=".views.swu_out.CafeMapFragmentActivity" />
+        <activity android:name=".views.swu_out.WalkMapFragmentActivity" />
+        <activity android:name=".views.swu_out.StudyMapFragmentActivity" />
+        <activity android:name=".views.swu_out.PlayMapFragmentActivity" />
 
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="2nv9b63rbh" />
-
     </application>
 
 </manifest>

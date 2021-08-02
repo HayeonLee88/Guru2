@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".views.swu_out.result.cafe.CafeResultActivity">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/PlaceName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_gravity="center"
+            android:background="@color/darkblue"
+            android:textSize="22sp"
+            android:padding="16dp"
+            android:textColor="@color/white"
+            android:inputType="textPersonName"
+            android:text="[서울여대 주변 카페] 토끼별 카페"
+            android:gravity="center_horizontal" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="223dp"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:background="#000000"
+            android:maxWidth="200dp"
+            android:maxHeight="50dp"
+            android:src="@drawable/tokkibeul" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="20dp">
+
+            <TextView
+                android:id="@+id/TitleAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:background="@color/skyblue"
+                android:padding="6dp"
+                android:text="장소 위치" />
+
+            <TextView
+                android:id="@+id/PostalAddress"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center_vertical"
+                android:text="서울특별시 노원구 화랑로51길 38 1층" />
+
+            <TextView
+                android:id="@+id/TitleExplain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:background="@color/skyblue"
+                android:padding="6dp"
+                android:text="세부 설명" />
+
+            <TextView
+                android:id="@+id/Explain"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:text="서울여자대학교 후문에 위치한 카페로, 가장 인기있는 메뉴는 \n딸기이불 토끼 아이스크림 입니다.
+                                \n영업시간은 아침 7시부터 저녁 10시까지 입니다. " />
+
+            <TextView
+                android:id="@+id/TitleRiview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:background="@color/skyblue"
+                android:padding="6dp"
+                android:text="사용자 리뷰" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/NickName1"
+                    android:layout_width="92dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="  왕대머리" />
+
+                <TextView
+                    android:id="@+id/Review1"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="조용하고 공부하기 좋아요" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/NickName2"
+                    android:layout_width="92dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="정월대보름" />
+
+                <TextView
+                    android:id="@+id/Review2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="사장님 친절합니다 굿굿" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/NickName3"
+                    android:layout_width="92dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:text="헬로월드" />
+
+                <TextView
+                    android:id="@+id/Review3"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="가격 조금 있고 맛은 괜찮은 편이에요" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

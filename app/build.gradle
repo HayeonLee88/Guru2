@@ -50,4 +50,5 @@ dependencies {
     implementation 'com.naver.maps:map-sdk:3.12.0'
     // 네이버 지도 위치 추적
     implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.5.21'
 }
