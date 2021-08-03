@@ -42,7 +42,7 @@ class HomeActivity : AppCompatActivity() {
         btnStart.setOnClickListener {
             val intent = Intent(this, ThemaActivity::class.java) // 테마 버튼 화면으로 전환
             startActivity(intent)
-            finish()
+            //finish()
         }
     }
 }

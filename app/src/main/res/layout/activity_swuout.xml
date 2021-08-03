@@ -49,18 +49,21 @@
         android:layout_width="74dp"
         android:layout_height="72dp"
         android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/WalkImg"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/catimageView"
         app:srcCompat="@drawable/food_icon"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="85dp" />
+        tools:ignore="MissingConstraints" />
+
     <ImageView
         android:id="@+id/WalkImg"
         android:layout_width="77dp"
         android:layout_height="67dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/catimageView"
         app:srcCompat="@drawable/walk_icon"
-        tools:layout_editor_absoluteX="252dp"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -80,11 +83,13 @@
         android:id="@+id/CafeImg"
         android:layout_width="71dp"
         android:layout_height="62dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/PlayImg"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEat"
         app:srcCompat="@drawable/cafe_icon"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="98dp" />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnDrink"
@@ -95,19 +100,22 @@
         android:text="카페"
         android:textColor="#FF535353"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/StudyImg"
         app:layout_constraintEnd_toStartOf="@+id/btnPlay"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CafeImg" />
+        app:layout_constraintTop_toBottomOf="@+id/CafeImg"
+        app:layout_constraintVertical_bias="0.05" />
 
     <ImageView
         android:id="@+id/PlayImg"
         android:layout_width="70dp"
         android:layout_height="67dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnWalk"
         app:srcCompat="@drawable/play_icon"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="259dp" />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnPlay"
@@ -125,10 +133,13 @@
         android:id="@+id/StudyImg"
         android:layout_width="73dp"
         android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSstudy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlay"
         app:srcCompat="@drawable/study_icon"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="169dp"
-        tools:layout_editor_absoluteY="471dp" />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnSstudy"
@@ -142,9 +153,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/StudyImg" />
+        app:layout_constraintTop_toBottomOf="@+id/StudyImg"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -65,10 +65,12 @@
         android:id="@+id/FoodImg"
         android:layout_width="74dp"
         android:layout_height="72dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/WalkImg"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/catimageView"
         app:srcCompat="@drawable/food_icon"
-        tools:layout_editor_absoluteX="85dp"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -76,18 +78,22 @@
         android:layout_width="77dp"
         android:layout_height="67dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/catimageView"
         app:srcCompat="@drawable/chill_icon"
-        tools:layout_editor_absoluteX="252dp"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/CafeImg"
         android:layout_width="71dp"
         android:layout_height="62dp"
+        android:layout_marginTop="67dp"
+        app:layout_constraintEnd_toStartOf="@+id/PlayImg"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FoodImg"
         app:srcCompat="@drawable/cafe_icon"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="336dp"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -100,6 +106,7 @@
         android:text="카페"
         android:textColor="#FF535353"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/StudyImg"
         app:layout_constraintEnd_toStartOf="@+id/btnPhoto"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CafeImg" />
@@ -108,10 +115,12 @@
         android:id="@+id/PlayImg"
         android:layout_width="70dp"
         android:layout_height="67dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="88dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WalkImg"
         app:srcCompat="@drawable/camera_icon"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="252dp"
-        tools:layout_editor_absoluteY="336dp" />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnPhoto"
@@ -130,10 +139,11 @@
         android:id="@+id/StudyImg"
         android:layout_width="73dp"
         android:layout_height="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPhoto"
         app:srcCompat="@drawable/study_icon"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="171dp"
-        tools:layout_editor_absoluteY="467dp" />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnStudy"
@@ -145,10 +155,12 @@
         android:text="스터디 공간"
         android:textColor="#FF535353"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/StudyImg" />
+        app:layout_constraintTop_toBottomOf="@+id/StudyImg"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
