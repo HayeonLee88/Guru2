@@ -35,7 +35,7 @@ class ResetPwdActivity : AppCompatActivity() {
 
         btnSignIn.setOnClickListener {
             startActivity(Intent(this, SignInActivity::class.java))
-            Toast.makeText(this, "please sign into your account", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "로그인 해주세요", Toast.LENGTH_SHORT).show()
             finish()
         }
     }
@@ -45,10 +45,10 @@ class ResetPwdActivity : AppCompatActivity() {
         FirebaseAuth.getInstance().sendPasswordResetEmail(signInEmail)
             .addOnCompleteListener {	task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this, "재설정 메일을 보냈습니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "재설정 메일을 보냈습니다", Toast.LENGTH_SHORT).show()
                 } else {
                     Log.w(ControlsProviderService.TAG, "매일 재설정 : 실패", task.getException());
-                    Toast.makeText(this, "재설정 실패.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "재설정 실패", Toast.LENGTH_SHORT).show();
                 }
             }
     }

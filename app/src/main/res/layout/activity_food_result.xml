@@ -99,8 +99,8 @@
                     android:layout_width="92dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:textColor="@android:color/black"
-                    android:text="  슈니왕" />
+                    android:text="  슈니왕"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/Review1"
@@ -120,8 +120,8 @@
                     android:layout_width="92dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:textColor="@android:color/black"
-                    android:text="깜디맘" />
+                    android:text="깜디맘"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/Review2"
@@ -141,8 +141,8 @@
                     android:layout_width="92dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:textColor="@android:color/black"
-                    android:text="이월척" />
+                    android:text="이월척"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/Review3"
