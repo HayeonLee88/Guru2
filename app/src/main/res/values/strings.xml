@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Firebase auth</string>
+    <string name="app_name">어디가슈</string>
     <string name="sign_in">Sign in</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
