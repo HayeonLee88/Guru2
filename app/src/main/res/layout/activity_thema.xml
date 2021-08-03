@@ -7,37 +7,45 @@
     android:layout_height="match_parent"
     tools:context=".views.ThemaActivity">
 
-
-    <Button
-        android:id="@+id/btnIn"
-        android:layout_width="250dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="#E8E8E8"
-        android:padding="10dp"
-        android:text="서울여자대학교"
-        android:textColor="#FF535353"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnOut"
+    <ImageButton
+        android:id="@+id/UserIn"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/user_in"
+        app:layout_constraintBottom_toTopOf="@+id/btnIn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <Button
+    <ImageButton
+        android:id="@+id/btnIn"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="60dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/seoul_in"
+        app:layout_constraintBottom_toTopOf="@+id/btnOut"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UserIn"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ImageButton
         android:id="@+id/btnOut"
-        android:layout_width="250dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="#E8E8E8"
-        android:padding="10dp"
-        android:text="서울여자대학교\n주변"
-        android:textColor="#FF535353"
-        android:textSize="30sp"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/seoul_out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnIn" />
 

@@ -18,13 +18,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/darkblue"
+            android:background="@color/white"
             android:ems="10"
             android:gravity="center_horizontal"
             android:inputType="textPersonName"
             android:padding="16dp"
-            android:textColor="@color/white"
             android:text="[서울여대 음식점] 아딸 떡볶이"
+            android:textColor="@color/black"
             android:textSize="22sp" />
 
         <ImageView

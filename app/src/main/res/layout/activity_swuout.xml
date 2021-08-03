@@ -12,105 +12,139 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="서울여대 주변"
+        android:textColor="#000000"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/catimageView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <ImageView
         android:id="@+id/catimageView"
-        android:layout_width="410dp"
-        android:layout_height="191dp"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/outTextView"
-        app:srcCompat="@drawable/squirrel" />
+        app:srcCompat="@drawable/raw_seoul_out2" />
 
     <Button
         android:id="@+id/btnEat"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:backgroundTint="#E8E8E8"
         android:gravity="center"
-        android:padding="15dp"
         android:text="음식점"
         android:textColor="#FF535353"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnDrink"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/btnWalk"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/catimageView" />
+        app:layout_constraintTop_toBottomOf="@+id/FoodImg" />
+
+    <ImageView
+        android:id="@+id/FoodImg"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/catimageView"
+        app:srcCompat="@drawable/food_icon"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="85dp" />
+    <ImageView
+        android:id="@+id/WalkImg"
+        android:layout_width="77dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/catimageView"
+        app:srcCompat="@drawable/walk_icon"
+        tools:layout_editor_absoluteX="252dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnWalk"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:backgroundTint="#E8E8E8"
-        android:padding="15dp"
-        android:text="산책 스팟"
+        android:text="산책"
         android:textColor="#FF535353"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnDrink"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnEat"
-        app:layout_constraintTop_toBottomOf="@+id/catimageView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/WalkImg"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/CafeImg"
+        android:layout_width="71dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnEat"
+        app:srcCompat="@drawable/cafe_icon"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="98dp" />
 
     <Button
         android:id="@+id/btnDrink"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="13dp"
         android:backgroundTint="#E8E8E8"
-        android:padding="15dp"
         android:text="카페"
         android:textColor="#FF535353"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/btnPlay"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEat" />
+        app:layout_constraintTop_toBottomOf="@+id/CafeImg" />
+
+    <ImageView
+        android:id="@+id/PlayImg"
+        android:layout_width="70dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnWalk"
+        app:srcCompat="@drawable/play_icon"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="259dp" />
 
     <Button
         android:id="@+id/btnPlay"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:backgroundTint="#E8E8E8"
-        android:padding="15dp"
         android:text="놀거리"
         android:textColor="#FF535353"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnDrink"
-        app:layout_constraintTop_toBottomOf="@+id/btnWalk" />
+        app:layout_constraintTop_toBottomOf="@+id/PlayImg" />
+
+    <ImageView
+        android:id="@+id/StudyImg"
+        android:layout_width="73dp"
+        android:layout_height="56dp"
+        app:srcCompat="@drawable/study_icon"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="471dp" />
 
     <Button
         android:id="@+id/btnSstudy"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="26dp"
         android:backgroundTint="#E8E8E8"
         android:gravity="center"
-        android:padding="15dp"
-        android:text="스터디 스팟"
+        android:text="스터디 공간"
         android:textColor="#FF535353"
-        android:textSize="30sp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDrink" />
+        app:layout_constraintTop_toBottomOf="@+id/StudyImg" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

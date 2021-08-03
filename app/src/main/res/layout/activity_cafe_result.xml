@@ -7,23 +7,25 @@
     android:background="@color/white"
     android:orientation="vertical"
     tools:context=".views.swu_out.result.cafe.CafeResultActivity">
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/PlaceName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:layout_gravity="center"
-            android:background="@color/darkblue"
-            android:textSize="22sp"
-            android:padding="16dp"
-            android:textColor="@color/white"
+            android:background="@color/white"
+            android:ems="10"
+            android:gravity="center_horizontal"
             android:inputType="textPersonName"
+            android:padding="16dp"
             android:text="[서울여대 주변 카페] 토끼별 카페"
-            android:gravity="center_horizontal" />
+            android:textColor="@color/black"
+            android:textSize="22sp" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -39,18 +41,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_margin="20dp">
+            android:layout_margin="20dp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/TitleAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
                 android:background="@color/skyblue"
                 android:padding="6dp"
-                android:text="장소 위치" />
+                android:text="장소 위치"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/PostalAddress"
@@ -63,11 +65,11 @@
                 android:id="@+id/TitleExplain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
                 android:background="@color/skyblue"
                 android:padding="6dp"
-                android:text="세부 설명" />
+                android:text="세부 설명"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/Explain"
@@ -82,11 +84,11 @@
                 android:id="@+id/TitleRiview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
-                android:textSize="18sp"
                 android:background="@color/skyblue"
                 android:padding="6dp"
-                android:text="사용자 리뷰" />
+                android:text="사용자 리뷰"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -98,8 +100,8 @@
                     android:layout_width="92dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:textColor="@android:color/black"
-                    android:text="  왕대머리" />
+                    android:text="  왕대머리"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/Review1"
@@ -119,8 +121,8 @@
                     android:layout_width="92dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:textColor="@android:color/black"
-                    android:text="정월대보름" />
+                    android:text="정월대보름"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/Review2"
@@ -140,8 +142,8 @@
                     android:layout_width="92dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:textColor="@android:color/black"
-                    android:text="헬로월드" />
+                    android:text="헬로월드"
+                    android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/Review3"
