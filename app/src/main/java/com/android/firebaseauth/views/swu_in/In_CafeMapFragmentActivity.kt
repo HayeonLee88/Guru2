@@ -1,8 +1,13 @@
 package com.android.firebaseauth.views.swu_in
 
 import android.app.Activity
+import android.content.Intent
+import android.database.Cursor
+import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.annotation.NonNull
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.*
@@ -10,12 +15,21 @@ import com.naver.maps.map.overlay.Marker
 import com.naver.maps.map.util.FusedLocationSource
 import com.naver.maps.map.util.MarkerIcons
 import com.android.firebaseauth.R
+import com.android.firebaseauth.views.DBmanager
+import com.android.firebaseauth.views.swu_in.UserInputResult.UserInputResultActivity
+import com.android.firebaseauth.views.swu_in.result.food.FoodResultActivity
 import com.naver.maps.map.LocationTrackingMode
 import com.naver.maps.map.MapView
 import com.naver.maps.map.NaverMap
 import com.naver.maps.map.OnMapReadyCallback
 
 class In_CafeMapFragmentActivity : Activity(), OnMapReadyCallback {
+
+    lateinit var dbManager: DBmanager
+    lateinit var sqllitedb: SQLiteDatabase
+
+    // 버튼 변수
+    private lateinit var CafebtnList4: Button
 
     private lateinit var mapView: MapView
     private val LOCATION_PERMISSTION_REQUEST_CODE: Int = 1000
@@ -30,11 +44,45 @@ class In_CafeMapFragmentActivity : Activity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.in_cafefragment_map)
 
+        // 세부정보 버튼 연결
+        CafebtnList4 = findViewById(R.id.InCafebtnList4)
+
         mapView = findViewById(R.id.InCafemap_view)
         mapView.onCreate(savedInstanceState)
 
         mapView.getMapAsync(this)
         locationSource = FusedLocationSource(this, LOCATION_PERMISSTION_REQUEST_CODE)
+
+        // 리스트 버튼 누르면 좌표, 장소이름 전달
+        CafebtnList4.setOnClickListener {
+            var intent = Intent(this, FoodResultActivity::class.java)
+            startActivity(intent)
+        }
+
+        var intent = intent
+        var PlaceValue: String? = intent.getStringExtra("place")
+
+        //getIntent().getBooleanExtra("buttonVisible", false)
+
+        dbManager = DBmanager(this, "PlaceDB", null, 1)
+        sqllitedb = dbManager.readableDatabase
+
+        var cursor: Cursor
+        cursor =
+            sqllitedb.rawQuery("SELECT * FROM Place where category = '카페';", null)
+
+        if (cursor.moveToNext()) {
+            CafebtnList4.setVisibility(View.VISIBLE)
+            PlaceValue = cursor.getString(cursor.getColumnIndex("place")).toString()
+        }
+        CafebtnList4.text = PlaceValue
+
+        CafebtnList4.setOnClickListener {
+            var intent = Intent(this, UserInputResultActivity::class.java)
+            intent.putExtra("place", PlaceValue)
+            startActivity(intent)
+        }
+
 
     }
 

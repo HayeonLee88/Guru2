@@ -17,7 +17,9 @@
         android:theme="@style/Theme.FirebaseAuth"
         android:usesCleartextTraffic="true"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".views.swu_out.result.cafe.CafeResultActivity"></activity>
+        <activity android:name=".views.swu_in.UserInputResult.UserInputResultActivity"></activity>
+        <activity android:name=".views.UserInputActivity" />
+        <activity android:name=".views.swu_out.result.cafe.CafeResultActivity" />
         <activity android:name=".views.swu_in.result.food.FoodResultActivity" />
         <activity android:name=".views.ResetPwdActivity" />
         <activity android:name=".views.SignInActivity" />

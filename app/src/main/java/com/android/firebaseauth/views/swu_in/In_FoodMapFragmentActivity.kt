@@ -2,8 +2,11 @@ package com.android.firebaseauth.views.swu_in
 
 import android.app.Activity
 import android.content.Intent
+import android.database.Cursor
+import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import androidx.annotation.NonNull
 import com.naver.maps.geometry.LatLng
@@ -14,6 +17,8 @@ import com.naver.maps.map.overlay.Overlay
 import com.naver.maps.map.util.FusedLocationSource
 import com.naver.maps.map.util.MarkerIcons
 import com.android.firebaseauth.R
+import com.android.firebaseauth.views.DBmanager
+import com.android.firebaseauth.views.swu_in.UserInputResult.UserInputResultActivity
 import com.android.firebaseauth.views.swu_in.result.food.FoodResultActivity
 import com.naver.maps.map.LocationTrackingMode
 import com.naver.maps.map.MapView
@@ -22,17 +27,22 @@ import com.naver.maps.map.OnMapReadyCallback
 
 class In_FoodMapFragmentActivity : Activity(), OnMapReadyCallback {
 
+    lateinit var dbManager: DBmanager
+    lateinit var sqllitedb: SQLiteDatabase
+
     // 버튼 변수
-    private lateinit var FoodbtnList1 : Button
+    private lateinit var FoodbtnList1: Button
+    private lateinit var FoodbtnList4: Button
 
     private lateinit var mapView: MapView
-    private val LOCATION_PERMISSTION_REQUEST_CODE : Int = 1000;
-    private lateinit var locationSource : FusedLocationSource // 위치를 반환하는 구현체
+    private val LOCATION_PERMISSTION_REQUEST_CODE: Int = 1000;
+    private lateinit var locationSource: FusedLocationSource // 위치를 반환하는 구현체
     private lateinit var naverMap: NaverMap
     private val marker = Marker()
     private val marker1 = Marker()
     private val marker2 = Marker()
     private val marker3 = Marker()
+
     //설명창
     private val infoWindow1 = InfoWindow()
     private val infoWindow2 = InfoWindow()
@@ -44,6 +54,7 @@ class In_FoodMapFragmentActivity : Activity(), OnMapReadyCallback {
 
         // 세부정보 버튼 연결
         FoodbtnList1 = findViewById(R.id.InFoodbtnList1)
+        FoodbtnList4 = findViewById(R.id.InFoodbtnList4)
 
         mapView = findViewById(R.id.InFoodmap_view)
         mapView.onCreate(savedInstanceState)
@@ -57,10 +68,34 @@ class In_FoodMapFragmentActivity : Activity(), OnMapReadyCallback {
             startActivity(intent)
         }
 
+        var intent = intent
+        var PlaceValue: String? = intent.getStringExtra("place")
+
+        //getIntent().getBooleanExtra("buttonVisible", false)
+
+        dbManager = DBmanager(this, "PlaceDB", null, 1)
+        sqllitedb = dbManager.readableDatabase
+
+        var cursor: Cursor
+        cursor =
+            sqllitedb.rawQuery("SELECT * FROM Place where category = '음식점';", null)
+
+        if (cursor.moveToNext()) {
+            FoodbtnList4.setVisibility(View.VISIBLE)
+            PlaceValue = cursor.getString(cursor.getColumnIndex("place")).toString()
+        }
+        FoodbtnList4.text = PlaceValue
+
+        FoodbtnList4.setOnClickListener {
+            var intent = Intent(this, UserInputResultActivity::class.java)
+            intent.putExtra("place", PlaceValue)
+            startActivity(intent)
+        }
+
     }
 
 
-    override fun onMapReady(@NonNull naverMap:NaverMap) {
+    override fun onMapReady(@NonNull naverMap: NaverMap) {
         this.naverMap = naverMap
         naverMap.locationSource = locationSource
         naverMap.locationTrackingMode = LocationTrackingMode.Follow

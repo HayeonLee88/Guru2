@@ -20,6 +20,11 @@ class ThemaActivity: AppCompatActivity() {
             btnOut=findViewById(R.id.btnOut)
             UserIn=findViewById(R.id.UserIn)
 
+            UserIn.setOnClickListener{
+                val intent = Intent(this, UserInputActivity::class.java) // 서울여대 내부
+                startActivity(intent)
+            }
+
             btnIn.setOnClickListener {
                 val intent = Intent(this,SwuInActivity::class.java) // 서울여대 내부
                 startActivity(intent)

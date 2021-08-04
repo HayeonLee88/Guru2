@@ -80,6 +80,19 @@
                 android:textColor="#FF535353"
                 android:textSize="23dp" />
 
+            <Button
+                android:id="@+id/InInStudybtnList2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/button_background"
+                android:text=""
+                android:textColor="#FF535353"
+                android:textSize="23dp"
+                android:visibility="gone"/>
+
 
         </LinearLayout>
     </ScrollView>
