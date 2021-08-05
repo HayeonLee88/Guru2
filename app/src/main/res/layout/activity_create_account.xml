@@ -70,7 +70,6 @@
         android:layout_marginBottom="20dp"
         android:hint="@string/confirm_password"
         android:inputType="textPassword"
-        android:maxLength="8"
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@id/btnCreateAccount"
         app:layout_constraintEnd_toEndOf="@id/etPassword"
