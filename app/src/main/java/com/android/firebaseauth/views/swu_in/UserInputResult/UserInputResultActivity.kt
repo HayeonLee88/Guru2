@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.ActionBar
 import com.android.firebaseauth.R
 import com.android.firebaseauth.views.DBmanager
 import java.util.*
@@ -19,6 +20,10 @@ class UserInputResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_input_result)
+
+        var actionBar : ActionBar
+        actionBar = supportActionBar!!
+        actionBar?.hide()
 
         var intent = intent
 

@@ -8,6 +8,7 @@ import android.os.Parcelable
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.ActionBar
 import com.android.firebaseauth.R
 import com.android.firebaseauth.views.swu_in.*
 
@@ -27,6 +28,10 @@ class SwuInActivity() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_swuin)
+
+        var actionBar : ActionBar
+        actionBar = supportActionBar!!
+        actionBar?.hide()
 
         btnFood = findViewById(R.id.btnFood)
         btnCafe = findViewById(R.id.btnCafe)

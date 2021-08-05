@@ -8,6 +8,7 @@ import android.os.AsyncTask
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.actionCodeSettings
@@ -38,6 +39,11 @@ class CreateAccountActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_account)
+
+        var actionBar : ActionBar
+
+        actionBar = supportActionBar!!
+        actionBar?.hide()
 
         etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)
@@ -229,5 +235,4 @@ class CreateAccountActivity : AppCompatActivity() {
         }
 
     }
-
 }

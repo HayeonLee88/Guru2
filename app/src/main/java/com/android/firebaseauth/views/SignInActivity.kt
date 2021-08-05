@@ -7,6 +7,7 @@ import android.content.Intent
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.actionCodeSettings
@@ -27,6 +28,11 @@ class SignInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
+
+        var actionBar : ActionBar
+
+        actionBar = supportActionBar!!
+        actionBar?.hide()
 
         etSignInEmail = findViewById(R.id.etSignInEmail)
         etSignInPassword = findViewById(R.id.etSignInPassword)

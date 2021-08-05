@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.ActionBar
 import com.android.firebaseauth.R
 import com.android.firebaseauth.views.swu_out.*
 
@@ -22,6 +23,10 @@ class SwuOutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_swuout)
+
+        var actionBar : ActionBar
+        actionBar = supportActionBar!!
+        actionBar?.hide()
 
         btnEat = findViewById(R.id.btnEat)
         btnDrink = findViewById(R.id.btnDrink)

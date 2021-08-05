@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import com.android.firebaseauth.R
 import com.google.firebase.auth.FirebaseAuth
 
@@ -24,6 +25,11 @@ class ResetPwdActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reset_pwd)
+
+        var actionBar : ActionBar
+
+        actionBar = supportActionBar!!
+        actionBar?.hide()
 
         etResetPWDEmail = findViewById(R.id.etResetPWDEmail)
         btnResetPassword = findViewById(R.id.btnResetPassword2)
