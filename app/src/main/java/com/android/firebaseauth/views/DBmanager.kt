@@ -11,7 +11,7 @@ class DBmanager (
     version: Int
 ) : SQLiteOpenHelper(context, name, factory, version) {
     override fun onCreate(db: SQLiteDatabase?) {
-        db!!.execSQL("CREATE TABLE Place (category text, place text, address text, detail text)")
+        db!!.execSQL("CREATE TABLE Place (theme text, category text, place text, address text, detail text)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {

@@ -69,7 +69,7 @@ class In_CafeMapFragmentActivity : Activity(), OnMapReadyCallback {
 
         var cursor: Cursor
         cursor =
-            sqllitedb.rawQuery("SELECT * FROM Place where category = '카페';", null)
+            sqllitedb.rawQuery("SELECT * FROM Place where theme = '서울여대' and category = '카페';", null)
 
         if (cursor.moveToNext()) {
             CafebtnList4.setVisibility(View.VISIBLE)

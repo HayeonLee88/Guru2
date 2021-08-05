@@ -22,6 +22,7 @@ class UserInputResultActivity : AppCompatActivity() {
 
         var intent = intent
 
+        var ThemeValue: String? = intent.getStringExtra("theme")
         var CategoryValue: String? = intent.getStringExtra("category")
         var PlaceValue: String? = intent.getStringExtra("place")
         var AddressValue: String? = intent.getStringExtra("address")
@@ -42,6 +43,7 @@ class UserInputResultActivity : AppCompatActivity() {
             sqllitedb.rawQuery("SELECT * FROM Place WHERE place = '" + PlaceValue + "';", null)
 
         if (cursor.moveToNext()) {
+            ThemeValue = cursor.getString(cursor.getColumnIndex("theme")).toString()
             CategoryValue = cursor.getString(cursor.getColumnIndex("category")).toString()
             AddressValue = cursor.getString(cursor.getColumnIndex("address")).toString()
             ExplainValue = cursor.getString(cursor.getColumnIndex("detail")).toString()
@@ -51,7 +53,7 @@ class UserInputResultActivity : AppCompatActivity() {
         sqllitedb.close()
         dbManager.close()
 
-        tvPlace.text = "[서울여대 "+CategoryValue +"] " + PlaceValue
+        tvPlace.text = "["+ThemeValue +" " +CategoryValue +"] " + PlaceValue
         tvAddress.text = AddressValue
         tvExplain.text = ExplainValue
 

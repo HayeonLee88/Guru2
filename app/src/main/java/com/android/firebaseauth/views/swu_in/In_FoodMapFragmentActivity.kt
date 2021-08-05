@@ -71,14 +71,12 @@ class In_FoodMapFragmentActivity : Activity(), OnMapReadyCallback {
         var intent = intent
         var PlaceValue: String? = intent.getStringExtra("place")
 
-        //getIntent().getBooleanExtra("buttonVisible", false)
-
         dbManager = DBmanager(this, "PlaceDB", null, 1)
         sqllitedb = dbManager.readableDatabase
 
         var cursor: Cursor
         cursor =
-            sqllitedb.rawQuery("SELECT * FROM Place where category = '음식점';", null)
+            sqllitedb.rawQuery("SELECT * FROM Place where theme = '서울여대' and category = '음식점';", null)
 
         if (cursor.moveToNext()) {
             FoodbtnList4.setVisibility(View.VISIBLE)

@@ -1,8 +1,13 @@
 package com.android.firebaseauth.views.swu_out
 
 import android.app.Activity
+import android.content.Intent
+import android.database.Cursor
+import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.annotation.NonNull
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.*
@@ -10,12 +15,20 @@ import com.naver.maps.map.overlay.Marker
 import com.naver.maps.map.util.FusedLocationSource
 import com.naver.maps.map.util.MarkerIcons
 import com.android.firebaseauth.R
+import com.android.firebaseauth.views.DBmanager
+import com.android.firebaseauth.views.swu_in.UserInputResult.UserInputResultActivity
 import com.naver.maps.map.LocationTrackingMode
 import com.naver.maps.map.MapView
 import com.naver.maps.map.NaverMap
 import com.naver.maps.map.OnMapReadyCallback
 
 class StudyMapFragmentActivity : Activity(), OnMapReadyCallback {
+
+    lateinit var dbManager: DBmanager
+    lateinit var sqllitedb: SQLiteDatabase
+
+    // 버튼 변수
+    private lateinit var StudybtnList4: Button
 
     private lateinit var mapView: MapView
     private val LOCATION_PERMISSTION_REQUEST_CODE : Int = 1000;
@@ -30,11 +43,35 @@ class StudyMapFragmentActivity : Activity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.out_studyfragment_map)
 
+        StudybtnList4 = findViewById(R.id.StudybtnList4)
+
         mapView = findViewById(R.id.Studymap_view)
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
 
         locationSource = FusedLocationSource(this, LOCATION_PERMISSTION_REQUEST_CODE)
+
+        var intent = intent
+        var PlaceValue: String? = intent.getStringExtra("place")
+
+        dbManager = DBmanager(this, "PlaceDB", null, 1)
+        sqllitedb = dbManager.readableDatabase
+
+        var cursor: Cursor
+        cursor =
+            sqllitedb.rawQuery("SELECT * FROM Place where theme = '서울여대 주변' and category = '스터디 공간';", null)
+
+        if (cursor.moveToNext()) {
+            StudybtnList4.setVisibility(View.VISIBLE)
+            PlaceValue = cursor.getString(cursor.getColumnIndex("place")).toString()
+        }
+        StudybtnList4.text = PlaceValue
+
+        StudybtnList4.setOnClickListener {
+            var intent = Intent(this, UserInputResultActivity::class.java)
+            intent.putExtra("place", PlaceValue)
+            startActivity(intent)
+        }
 
     }
 

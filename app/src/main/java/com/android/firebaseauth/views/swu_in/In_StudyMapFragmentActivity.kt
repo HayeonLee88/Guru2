@@ -69,7 +69,7 @@ class In_StudyMapFragmentActivity : Activity(), OnMapReadyCallback {
 
         var cursor: Cursor
         cursor =
-            sqllitedb.rawQuery("SELECT * FROM Place where category = '스터디 공간';", null)
+            sqllitedb.rawQuery("SELECT * FROM Place where theme = '서울여대' and  category = '스터디 공간';", null)
 
         if (cursor.moveToNext()) {
             StudybtnList2.setVisibility(View.VISIBLE)

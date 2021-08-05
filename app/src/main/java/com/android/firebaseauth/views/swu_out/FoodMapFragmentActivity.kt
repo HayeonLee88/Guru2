@@ -1,10 +1,17 @@
 package com.android.firebaseauth.views.swu_out
 
 import android.app.Activity
+import android.content.Intent
+import android.database.Cursor
+import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.annotation.NonNull
 import com.android.firebaseauth.R
+import com.android.firebaseauth.views.DBmanager
+import com.android.firebaseauth.views.swu_in.UserInputResult.UserInputResultActivity
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.LocationTrackingMode
 import com.naver.maps.map.MapView
@@ -17,6 +24,12 @@ import com.naver.maps.map.util.FusedLocationSource
 import com.naver.maps.map.util.MarkerIcons
 
 class FoodMapFragmentActivity : Activity(), OnMapReadyCallback {
+
+    lateinit var dbManager: DBmanager
+    lateinit var sqllitedb: SQLiteDatabase
+
+    // 버튼 변수
+    private lateinit var FoodbtnList4: Button
 
     private lateinit var mapView: MapView
     private val LOCATION_PERMISSTION_REQUEST_CODE : Int = 1000
@@ -36,11 +49,36 @@ class FoodMapFragmentActivity : Activity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.out_foodfragment_map)
 
+        FoodbtnList4 = findViewById(R.id.btnList4)
+
         mapView = findViewById(R.id.Foodmap_view)
         mapView.onCreate(savedInstanceState)
 
         mapView.getMapAsync(this)
         locationSource = FusedLocationSource(this, LOCATION_PERMISSTION_REQUEST_CODE)
+
+
+        var intent = intent
+        var PlaceValue: String? = intent.getStringExtra("place")
+
+        dbManager = DBmanager(this, "PlaceDB", null, 1)
+        sqllitedb = dbManager.readableDatabase
+
+        var cursor: Cursor
+        cursor =
+            sqllitedb.rawQuery("SELECT * FROM Place where theme = '서울여대 주변'and category = '음식점';", null)
+
+        if (cursor.moveToNext()) {
+            FoodbtnList4.setVisibility(View.VISIBLE)
+            PlaceValue = cursor.getString(cursor.getColumnIndex("place")).toString()
+        }
+        FoodbtnList4.text = PlaceValue
+
+        FoodbtnList4.setOnClickListener {
+            var intent = Intent(this, UserInputResultActivity::class.java)
+            intent.putExtra("place", PlaceValue)
+            startActivity(intent)
+        }
 
     }
 

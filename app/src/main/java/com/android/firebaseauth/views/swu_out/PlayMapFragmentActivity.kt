@@ -1,10 +1,17 @@
 package com.android.firebaseauth.views.swu_out
 
 import android.app.Activity
+import android.content.Intent
+import android.database.Cursor
+import android.database.sqlite.SQLiteDatabase
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.annotation.NonNull
 import com.android.firebaseauth.R
+import com.android.firebaseauth.views.DBmanager
+import com.android.firebaseauth.views.swu_in.UserInputResult.UserInputResultActivity
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.*
 import com.naver.maps.map.overlay.InfoWindow
@@ -14,6 +21,13 @@ import com.naver.maps.map.util.FusedLocationSource
 import com.naver.maps.map.util.MarkerIcons
 
 class PlayMapFragmentActivity : Activity(), OnMapReadyCallback {
+
+    lateinit var dbManager: DBmanager
+    lateinit var sqllitedb: SQLiteDatabase
+
+    // 버튼 변수
+    private lateinit var PlaybtnList4: Button
+
 
     private lateinit var mapView: MapView
     private val LOCATION_PERMISSTION_REQUEST_CODE : Int = 1000;
@@ -28,11 +42,35 @@ class PlayMapFragmentActivity : Activity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.out_playfragment_map)
 
+        PlaybtnList4 = findViewById(R.id.PlaybtnList4)
+
         mapView = findViewById(R.id.Playmap_view)
         mapView.onCreate(savedInstanceState)
 
         mapView.getMapAsync(this)
         locationSource = FusedLocationSource(this, LOCATION_PERMISSTION_REQUEST_CODE)
+
+        var intent = intent
+        var PlaceValue: String? = intent.getStringExtra("place")
+
+        dbManager = DBmanager(this, "PlaceDB", null, 1)
+        sqllitedb = dbManager.readableDatabase
+
+        var cursor: Cursor
+        cursor =
+            sqllitedb.rawQuery("SELECT * FROM Place where category = '놀거리';", null)
+
+        if (cursor.moveToNext()) {
+            PlaybtnList4.setVisibility(View.VISIBLE)
+            PlaceValue = cursor.getString(cursor.getColumnIndex("place")).toString()
+        }
+        PlaybtnList4.text = PlaceValue
+
+        PlaybtnList4.setOnClickListener {
+            var intent = Intent(this, UserInputResultActivity::class.java)
+            intent.putExtra("place", PlaceValue)
+            startActivity(intent)
+        }
 
     }
 

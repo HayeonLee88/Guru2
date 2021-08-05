@@ -32,17 +32,18 @@
 
 
     <RadioGroup
-        android:id="@+id/rgCategory"
+        android:id="@+id/rgOutCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgtheme">
+        app:layout_constraintTop_toBottomOf="@+id/rgInCategory"
+        android:visibility="gone">
 
         <RadioButton
-            android:id="@+id/rbtnFood"
+            android:id="@+id/rbtnFood2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
@@ -50,43 +51,87 @@
             android:text="음식점" />
 
         <RadioButton
-            android:id="@+id/rbtnCafe"
+            android:id="@+id/rbtnCafe2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="카페" />
 
         <RadioButton
-            android:id="@+id/rbtnRest"
+            android:id="@+id/rbtnPlay1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="휴식" />
+            android:text="놀거리" />
 
         <RadioButton
-            android:id="@+id/rbtnPhoto"
+            android:id="@+id/rbtnWalk1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="사진 스팟" />
+            android:text="산책로" />
 
         <RadioButton
-            android:id="@+id/rbtnStudy"
+            android:id="@+id/rbtnStudy2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="스터디 공간" />
     </RadioGroup>
 
-        <TextView
-            android:id="@+id/textView6"
+    <RadioGroup
+        android:id="@+id/rgInCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgtheme"
+        android:visibility="gone">
+
+        <RadioButton
+            android:id="@+id/rbtnFood1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="장소 이름"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.093"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rgCategory" />
+            android:layout_marginStart="3dp"
+            android:layout_marginLeft="3dp"
+            android:text="음식점" />
 
-        <EditText
+        <RadioButton
+            android:id="@+id/rbtnCafe1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="카페" />
+
+        <RadioButton
+            android:id="@+id/rbtnRest1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="휴식" />
+
+        <RadioButton
+            android:id="@+id/rbtnPhoto1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사진 스팟" />
+
+        <RadioButton
+            android:id="@+id/rbtnStudy1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="스터디 공간" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="장소 이름"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgOutCategory" />
+
+    <EditText
             android:id="@+id/etPlace"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

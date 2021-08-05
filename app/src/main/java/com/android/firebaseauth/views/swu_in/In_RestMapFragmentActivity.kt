@@ -61,8 +61,6 @@ class In_RestMapFragmentActivity : Activity(), OnMapReadyCallback {
         var intent = intent
         var PlaceValue: String? = intent.getStringExtra("place")
 
-        //getIntent().getBooleanExtra("buttonVisible", false)
-
         dbManager = DBmanager(this, "PlaceDB", null, 1)
         sqllitedb = dbManager.readableDatabase
 
